@@ -13,8 +13,6 @@ public class App
 	
     public static void main( String[] args )
     {
-    	testPerformance();
-    	
     	// program must have at least one argument
     	if (args.length == 0) {
 			showUsage();
@@ -105,7 +103,7 @@ public class App
 		long start = System.nanoTime();
 		l.distance(s1, s2);
 		long duration = System.nanoTime() - start;
-		System.out.println("Length 100000 equal strings duration: " + duration + " ns.");
+		System.out.println("Length 100000 equal strings duration: " + duration + " ns " + "or " + duration / 1e9 + " s.");
 		
 	}
 
@@ -122,9 +120,9 @@ public class App
 		
 		Levenshtein l = new Levenshtein();
 		long start = System.nanoTime();
-		int d = l.distanceRecursive(s1, s2);
+		l.distanceRecursive(s1, s2);
 		long duration = System.nanoTime() - start;
-		System.out.println("Length 100 string against length 1 duration: " + duration + " ns.");
+		System.out.println("Length 100 string against length 1 duration: " + duration + " ns " + "or " + duration / 1e9 + " s.");
 	}
 
 	private static void testPerformanceUnboundedRecursive_10_Equal() {
@@ -144,7 +142,7 @@ public class App
 		long start = System.nanoTime();
 		l.distanceRecursive(s1, s2);
 		long duration = System.nanoTime() - start;
-		System.out.println("Length 10 equal strings duration (recursive): " + duration + " ns.");
+		System.out.println("Length 10 equal strings duration (recursive): " + duration + " ns " + "or " + duration / 1e9 + " s.");
 	}
 
 	private static void testPerformanceUnbounded_10000_Equal() {
@@ -164,7 +162,7 @@ public class App
 		long start = System.nanoTime();
 		l.distance(s1, s2);
 		long duration = System.nanoTime() - start;
-		System.out.println("Length 10000 equal strings duration: " + duration + " ns.");
+		System.out.println("Length 10000 equal strings duration: " + duration + " ns " + "or " + duration / 1e9 + " s.");
 	}
 
 	private static void testPerformanceUnbounded_1000_Equal() {
@@ -184,7 +182,7 @@ public class App
 		long start = System.nanoTime();
 		l.distance(s1, s2);
 		long duration = System.nanoTime() - start;
-		System.out.println("Length 1000 equal strings duration: " + duration + " ns.");
+		System.out.println("Length 1000 equal strings duration: " + duration + " ns " + "or " + duration / 1e9 + " s.");
 	}
 
 	private static void testPerformanceUnbounded_100_Equal() {
@@ -204,7 +202,7 @@ public class App
 		long start = System.nanoTime();
 		l.distance(s1, s2);
 		long duration = System.nanoTime() - start;
-		System.out.println("Length 100 equal strings duration: " + duration + " ns.");
+		System.out.println("Length 100 equal strings duration: " + duration + " ns " + "or " + duration / 1e9 + " s.");
 	}
 
 	private static void testPerformanceUnbounded_4() {
@@ -212,7 +210,7 @@ public class App
 		long start = System.nanoTime();
 		l.distance("Haus", "Häuser");
 		long duration = System.nanoTime() - start;
-		System.out.println("Kartoffelsalat-Runkelrüben unbounded duration: "+ duration + " ns.");
+		System.out.println("Kartoffelsalat-Runkelrüben unbounded duration: "+ duration + " ns " + "or " + duration / 1e9 + " s.");
 	}
 
 	private static void testPerformanceUnbounded_3() {
@@ -220,7 +218,7 @@ public class App
 		long start = System.nanoTime();
 		l.distance("Haus", "Häuser");
 		long duration = System.nanoTime() - start;
-		System.out.println("Haus-Häuser unbounded duration: "+ duration + "ns.");
+		System.out.println("Haus-Häuser unbounded duration: "+ duration + " ns " + "or " + duration / 1e9 + " s.");
 	}
 
 	private static void testPerformanceUnbounded_2() {
@@ -228,7 +226,7 @@ public class App
 		long start = System.nanoTime();
 		l.distance("Haus", "Mausi");
 		long duration = System.nanoTime() - start;
-		System.out.println("Haus-Mausi unbounded duration: "+ duration + "ns.");
+		System.out.println("Haus-Mausi unbounded duration: "+ duration + " ns " + "or " + duration / 1e9 + " s.");
 	}
 
 	private static void testPerformanceUnbounded_1() {
@@ -236,7 +234,7 @@ public class App
 		long start = System.nanoTime();
 		l.distance("Haus", "Maus");
 		long duration = System.nanoTime() - start;
-		System.out.println("Haus-Maus unbounded duration: "+ duration + "ns.");
+		System.out.println("Haus-Maus unbounded duration: "+ duration + " ns " + "or " + duration / 1e9 + " s.");
 	}
 	
     
