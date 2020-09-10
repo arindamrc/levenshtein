@@ -23,6 +23,6 @@ The above command displays the usage. The usage is also described below:
 JUnit functional tests are also included within the source.
 
 ## References:
-1. (Wikipedia)[https://en.wikipedia.org/wiki/Levenshtein_distance]
-2. (Codeproject)[https://www.codeproject.com/Articles/13525/Fast-memory-efficient-Levenshtein-algorithm-2]
-3. (Blog)[https://web.archive.org/web/20180612143641/https://bitbucket.org/clearer/iosifovich/]
+1. [Wikipedia](https://en.wikipedia.org/wiki/Levenshtein_distance)
+2. [Codeproject](https://www.codeproject.com/Articles/13525/Fast-memory-efficient-Levenshtein-algorithm-2)
+3. [Blog](https://web.archive.org/web/20180612143641/https://bitbucket.org/clearer/iosifovich/)
