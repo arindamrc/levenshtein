@@ -37,13 +37,14 @@ public class App
 			return;
 		}
     	
+    	// unbounded case
     	if (args.length == 3 && args[0].equals("-u")) {
 			String s1 = args[1];
 			String s2 = args[2];
 			Levenshtein l = new Levenshtein();
 			int distance = l.distance(s1, s2);
 			System.out.println("Unbounded levenshtein distance: " + distance);
-		} else if (args.length == 4 && args[0].equals("-b")) {
+		} else if (args.length == 4 && args[0].equals("-b")) { // bounded case
 			int k = 0;
 			try {
 	            k = Integer.parseInt(args[1]);
@@ -65,6 +66,9 @@ public class App
     	
     }
     
+    /**
+     * Show application usage.
+     */
     private static void showUsage() {
     	System.out.println("**********Levenshtein distance calculator**********");
     	System.out.println("Usage:");
@@ -73,6 +77,9 @@ public class App
     	System.out.println("To calculate bounded levenshtein distance: -b <bound> <string1> <string2>");
     }
     
+    /**
+     * Run performance tests.
+     */
     private static void testPerformance() {
 		testPerformanceUnbounded_1();
 		testPerformanceUnbounded_2();

@@ -1,11 +1,10 @@
-/**
- * 
- */
 package com.quoori.levenshtein;
 
 import static java.lang.Math.abs;
 
 /**
+ * Levenshtein distance calculator.
+ * 
  * @author arc
  *
  */
@@ -17,8 +16,8 @@ public class Levenshtein {
     /**
      * The unbounded levenshtein algorithm.
      * 
-     * @param s1
-     * @param s2
+     * @param s1 Source string.
+     * @param s2 Target string.
      * @return
      */
     public int distance(String s1, String s2) {
@@ -66,7 +65,7 @@ public class Levenshtein {
     			char b = s2.charAt(j-1);
     			
     			int cost = prev + (a == b ? 0 : 1);
-    			prev = v[j];
+    			prev = v[j]; 
     			v[j] = tripleMin(1 + v[j], 1 + v[j - 1], cost);
     		}
     		
@@ -161,6 +160,13 @@ public class Levenshtein {
 	}
     
     
+    /**
+     * The recursive method is also included as a sanity check.
+     * 
+     * @param s1
+     * @param s2
+     * @return
+     */
     public int distanceRecursive(String s1, String s2) {
     	if (s1.equals(s2)) {
 			return 0;
@@ -181,6 +187,15 @@ public class Levenshtein {
     	return _distanceRecursive(s1, s2, m, n);
 	}
     
+    /**
+     * Helper method to {@link Levenshtein#distanceRecursive(String, String)}.
+     * 
+     * @param s1
+     * @param s2
+     * @param m
+     * @param n
+     * @return
+     */
     private int _distanceRecursive(String s1, String s2, int m, int n) {
     	// Check for base cases.
     	if (n == 0) {
@@ -203,6 +218,14 @@ public class Levenshtein {
     }
     
     
+    /**
+     * Helper function to find the minimum of three values.
+     * 
+     * @param a
+     * @param b
+     * @param c
+     * @return
+     */
     private int tripleMin(int a, int b, int c) {
     	int m = a;
     	if (b < m) {
